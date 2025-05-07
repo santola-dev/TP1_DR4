@@ -1,0 +1,24 @@
+﻿@page
+@model LojaProdutos.Pages.IndexModel
+
+<h2>Lista de Produtos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço (R$)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model.Produtos)
+    {
+        <tr>
+            <td>@produto.Nome</td>
+            <td>@produto.Preco.ToString("F2")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-page="/Sobre">Ir para página Sobre</a>
