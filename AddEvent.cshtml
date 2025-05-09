@@ -1,0 +1,28 @@
+@page
+@model ProductCatalog.Pages.AddEventModel
+@{
+    ViewData["Title"] = "Cadastrar Evento";
+}
+
+<h1>Cadastrar Evento</h1>
+
+<form method="post">
+    <div>
+        <label for="Titulo">Título:</label>
+        <input type="text" id="Titulo" name="NovoEvento.Titulo" value="@Model.NovoEvento?.Titulo" />
+    </div>
+    <div>
+        <label for="Data">Data:</label>
+        <input type="date" id="Data" name="NovoEvento.Data" value="@Model.NovoEvento?.Data.ToString(" yyyy-MM-dd")" />
+    </div>
+    <div>
+        <label for="Local">Local:</label>
+        <input type="text" id="Local" name="NovoEvento.Local" value="@Model.NovoEvento?.Local" />
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
+
+@if (Model.ExibirMensagem)
+{
+<p><strong>Evento cadastrado com sucesso!</strong></p>
+}
